@@ -1,8 +1,12 @@
 :root {
   --contrast-light-color: #fff;
+  --contrast-light-color-rgb: 255, 255, 255;
   --light-color: #e7e7e7;
+  --light-color-rgb: rgb(231, 231, 231);
   --accent-color: #ff5050;
+  --accent-color-rgb: 255, 82, 82;
   --dark-color: #000;
+  --dark-color-rgb: 0, 0, 0;
   --base-font-family: 'Roboto', sans-serif;
   --accent-font-family: 'Josefin Sans', sans-serif;
   --base-font: 400 16px var(--base-font-family);
