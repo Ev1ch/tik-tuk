@@ -1,2 +1,11 @@
-// :root {
-// }
+:root {
+  --contrast-light-color: #fff;
+  --light-color: #e7e7e7;
+  --accent-color: #ff5050;
+  --dark-color: #000;
+  --base-font-family: 'Roboto', sans-serif;
+  --accent-font-family: 'Josefin Sans', sans-serif;
+  --base-font: 400 16px var(--base-font-family);
+  --base-time: 0.2s;
+  --base-radius: 5px;
+}
