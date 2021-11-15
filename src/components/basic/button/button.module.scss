@@ -1,0 +1,10 @@
+.button {
+  padding: 10px;
+  border: none;
+  border-radius: var(--base-radius);
+  background-color: var(--light-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
