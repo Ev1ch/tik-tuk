@@ -52,7 +52,7 @@ export interface IMusicMeta {
   duration: number;
 }
 
-export interface IVideo {
+export interface ITikTuk {
   id: string;
   secretID: string;
   text: string;

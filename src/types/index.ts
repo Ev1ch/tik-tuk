@@ -1,2 +1,2 @@
-export * from './video';
+export * from './tiktuk';
 export * from './user';
