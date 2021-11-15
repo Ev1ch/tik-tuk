@@ -1,0 +1,9 @@
+.tiktuk {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-rows: 150px auto;
+  gap: 20px;
+  grid-template-areas:
+    'information information .'
+    '. video .';
+}

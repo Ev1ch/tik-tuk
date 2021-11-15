@@ -1,0 +1,73 @@
+.information {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  grid-area: information;
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &Avatar {
+      min-height: 50px;
+      min-width: 50px;
+    }
+
+    .name,
+    .nick {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .nick {
+      font: 700 16px var(--base-font-family);
+    }
+
+    .name {
+      font: 300 14px var(--base-font-family);
+    }
+  }
+
+  .description {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    .text {
+      margin-top: 0;
+      margin-bottom: 5px;
+      font: var(--base-font);
+    }
+
+    .hashtags {
+      margin-top: 0;
+      margin-bottom: 0;
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  .music {
+    .description {
+      margin-top: 0;
+      margin-bottom: 0;
+      font: 700 12px var(--base-font-family);
+      white-space: nowrap;
+
+      .icon {
+        margin-right: 5px;
+        animation: spinning calc(var(--base-time) * 20) linear infinite;
+
+        @keyframes spinning {
+          0% {
+            transform: rotate(0);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.video {
+  border-radius: var(--base-radius);
+  overflow: hidden;
+  grid-area: video;
+
+  .content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
