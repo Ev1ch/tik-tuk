@@ -2,7 +2,6 @@
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  grid-area: information;
 
   .author {
     display: flex;
@@ -32,6 +31,7 @@
   .description {
     margin-top: 10px;
     margin-bottom: 20px;
+    text-align: justify;
 
     .text {
       margin-top: 0;
@@ -44,6 +44,7 @@
       margin-bottom: 0;
       display: flex;
       gap: 10px;
+      flex-wrap: wrap;
     }
   }
 
@@ -52,7 +53,6 @@
       margin-top: 0;
       margin-bottom: 0;
       font: 700 12px var(--base-font-family);
-      white-space: nowrap;
 
       .icon {
         margin-right: 5px;
