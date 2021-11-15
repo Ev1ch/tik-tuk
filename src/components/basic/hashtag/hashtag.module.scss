@@ -1,0 +1,14 @@
+.hashtag {
+  border-radius: calc(var(--base-radius) / 2);
+  border: 1px solid var(--dark-color);
+  padding: 2px 4px;
+  display: inline-block;
+  font: 400 14px var(--base-font-family);
+  user-select: none;
+
+  &::before {
+    content: '#';
+    font: 700 16px var(--accent-font-family);
+    margin-right: 2px;
+  }
+}
