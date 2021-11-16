@@ -21,6 +21,6 @@ sagaMiddleware.run(saga);
 
 export type TAppDispatch = typeof store.dispatch;
 export const useAppDispatch = () => useDispatch<TAppDispatch>();
-// export const useAppSelector: TypedUseSelectorHook<IRootState> = useSelector;
+export const useAppSelector: TypedUseSelectorHook<IRootState> = useSelector;
 
 export default store;

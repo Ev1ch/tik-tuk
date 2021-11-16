@@ -1,3 +1,7 @@
-// interface IRootState {}
+import { ITikTuksState } from 'containers/tiktuks/logic/state';
 
-export default {};
+interface IRootState {
+  tiktuks: ITikTuksState;
+}
+
+export default IRootState;
