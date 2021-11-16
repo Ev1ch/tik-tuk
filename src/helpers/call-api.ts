@@ -38,7 +38,7 @@ const getArgs = (args: IRequestArgs): RequestInit => {
   const headers: THeader = {};
   let body: TBody | null = null;
 
-  headers['x-access-token'] = JSON.parse(localStorage.getItem('user') || '{}')?.token;
+  headers['X-RapidAPI-Key'] = process.env.REACT_APP_API_KEY as string;
 
   if (args.body) {
     if (args.method === 'GET') {
