@@ -12,7 +12,7 @@ export interface IUserStats {
   diggCount: number;
 }
 
-export interface IUserData {
+export interface IUserInformation {
   id: string;
   shortId: string;
   uniqueId: string;
@@ -42,7 +42,7 @@ export interface IUserItem {
 }
 
 export interface IUser {
-  user: IUserData;
+  user: IUserInformation;
   stats: IUserStats;
-  items: IUserItem[];
+  itemList: IUserItem[];
 }
