@@ -10,7 +10,7 @@ const TrendingContainer = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(actions.getTrending());
+    dispatch(actions.getTrending({ toSet: true }));
   }, []);
 
   return <TrendingPage tiktuks={tiktuks} />;

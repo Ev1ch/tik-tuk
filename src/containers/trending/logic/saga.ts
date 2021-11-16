@@ -4,11 +4,16 @@ import * as actions from './actions';
 import { TikTuksService } from 'services';
 import { ITikTuk } from 'types';
 
-function* getTrandingWorker() {
+function* getTrandingWorker({ payload: { toSet } }: ReturnType<typeof actions.getTrending>) {
   try {
     const limit: number = yield select((state) => state.trending.options.limit);
     const tiktuks: ITikTuk[] = yield call(TikTuksService.getMany, { limit });
-    yield put(actions.setTrending({ tiktuks }));
+
+    if (toSet) {
+      yield put(actions.setTrending({ tiktuks }));
+    } else {
+      yield put(actions.addTrending({ tiktuks }));
+    }
   } catch (error) {
     console.log(error);
   }
