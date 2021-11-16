@@ -8,10 +8,17 @@ interface IStages {
   [key: string]: IStage;
 }
 
+const isInteger = (number: number) => number.toString().split('.').length === 1;
+
 const convertToMinifiedNumber = (number: number) => {
   let convertedNumber: string = number.toFixed(1);
 
   const Stages: IStages = {
+    HUNDRED: {
+      MAXIMUM: 1000,
+      DIVIDER: 1,
+      POSTFIX: '',
+    },
     THOUSANDS: {
       MAXIMUM: 1000000,
       DIVIDER: 1000,
@@ -31,9 +38,12 @@ const convertToMinifiedNumber = (number: number) => {
 
   for (const stage in Stages) {
     const currentStage = Stages[stage];
+    const dividedNumber = number / currentStage.DIVIDER;
 
     if (number < currentStage.MAXIMUM) {
-      convertedNumber = `${(number / currentStage.DIVIDER).toFixed(1)} ${currentStage.POSTFIX}`;
+      convertedNumber = `${isInteger(dividedNumber) ? dividedNumber : dividedNumber.toFixed(1)} ${
+        currentStage.POSTFIX
+      }`;
       return convertedNumber;
     }
   }
