@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { TikTuksContainer, UserContainer } from 'containers';
 import { Routes } from 'common';
-import { TikTuksContainer } from 'containers';
 
 const Router = (): JSX.Element => {
   return (
@@ -9,6 +9,9 @@ const Router = (): JSX.Element => {
       <Switch>
         <Route path={Routes.HOME} exact>
           <TikTuksContainer />
+        </Route>
+        <Route path={Routes.USERS()} exact>
+          <UserContainer />
         </Route>
       </Switch>
     </BrowserRouter>
