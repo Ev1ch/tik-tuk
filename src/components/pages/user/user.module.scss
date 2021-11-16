@@ -1,0 +1,14 @@
+.main {
+  margin-top: 50px;
+}
+
+.information {
+  margin-bottom: 50px;
+}
+
+.feed {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  grid-auto-rows: 400px;
+  gap: 20px;
+}

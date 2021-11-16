@@ -1,0 +1,41 @@
+.information {
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .avatar {
+      width: 200px;
+      height: 200px;
+    }
+
+    .name,
+    .nick {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .nick {
+      font: 700 32px var(--base-font-family);
+    }
+
+    .name {
+      font: 300 24px var(--base-font-family);
+    }
+  }
+
+  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+      font: var(--base-font);
+    }
+  }
+}
