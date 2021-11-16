@@ -1,1 +1,1 @@
-export {};
+export { default as TikTuksService } from './tiktuks';
