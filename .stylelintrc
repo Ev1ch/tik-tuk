@@ -1,7 +1,4 @@
 {
-  "plugins": ["stylelint-scss", "stylelint-high-performance-animation"],
-  "extends": ["stylelint-config-standard"],
-  "rules": {
-    "plugin/no-low-performance-animation-properties": true
-  }
+  "plugins": ["stylelint-scss"],
+  "extends": ["stylelint-config-standard"]
 }

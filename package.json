@@ -55,7 +55,6 @@
     "prettier": "^2.4.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
-    "stylelint-high-performance-animation": "^1.5.2",
     "stylelint-scss": "^3.21.0"
   },
   "lint-staged": {
