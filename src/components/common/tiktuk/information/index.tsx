@@ -26,11 +26,11 @@ const Information = ({ description, author, music }: IInfromationProps) => {
         </div>
         <div className={styles.description}>
           <p className={styles.text}>{description.text}</p>
-          <p className={styles.hashtags}>
+          <div className={styles.hashtags}>
             {description.hashtags.map((hashtag) => (
               <Hashtag hashtag={hashtag} key={hashtag.id} />
             ))}
-          </p>
+          </div>
         </div>
         <div className={styles.music}>
           <p className={styles.description}>
