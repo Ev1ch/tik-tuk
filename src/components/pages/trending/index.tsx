@@ -1,15 +1,15 @@
 import React from 'react';
 import { Header, TikTuk } from 'components';
 import { ITikTuk } from 'types';
-import styles from './tiktuks.module.scss';
+import styles from './trending.module.scss';
 
-interface ITikTuksPageProps {
+interface ITrendingPageProps {
   tiktuks: ITikTuk[];
 }
 
-const TikTuksPage = ({ tiktuks }: ITikTuksPageProps) => {
+const TrendingPage = ({ tiktuks }: ITrendingPageProps) => {
   return (
-    <div className="tiktuks-page">
+    <div className="trending-page">
       <Header />
       <main className={styles.main}>
         <div className="container">
@@ -24,4 +24,4 @@ const TikTuksPage = ({ tiktuks }: ITikTuksPageProps) => {
   );
 };
 
-export default TikTuksPage;
+export default TrendingPage;
