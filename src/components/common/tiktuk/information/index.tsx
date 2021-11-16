@@ -1,9 +1,11 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import { Avatar, Hashtag } from 'components';
 import { IAuthorMeta, IHashtag, IMusicMeta } from 'types';
-import styles from './information.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCompactDisc } from '@fortawesome/free-solid-svg-icons';
+import styles from './information.module.scss';
+import { Routes } from 'common';
 
 interface IInfromationProps {
   description: {
@@ -15,13 +17,23 @@ interface IInfromationProps {
 }
 
 const Information = ({ description, author, music }: IInfromationProps) => {
+  const history = useHistory();
+
+  const onAuthorClick = () => {
+    history.push(Routes.USERS(author.name));
+  };
+
   return (
     <div className={styles.information}>
-      <Avatar image={author.avatar} className={styles.authorAvatar} />
+      <Avatar image={author.avatar} className={styles.authorAvatar} onClick={onAuthorClick} />
       <div>
         <div className={styles.author}>
-          <p className={styles.nick}>{author.nickName}</p>
-          <p className={styles.name}>{author.name}</p>
+          <p className={styles.nick} onClick={onAuthorClick}>
+            {author.nickName}
+          </p>
+          <p className={styles.name} onClick={onAuthorClick}>
+            {author.name}
+          </p>
           {author.signature && <FontAwesomeIcon icon={faCheck} />}
         </div>
         <div className={styles.description}>

@@ -11,12 +11,14 @@
     &Avatar {
       min-height: 50px;
       min-width: 50px;
+      cursor: pointer;
     }
 
     .name,
     .nick {
       margin-top: 0;
       margin-bottom: 0;
+      cursor: pointer;
     }
 
     .nick {
