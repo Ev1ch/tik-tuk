@@ -1,6 +1,6 @@
 const Routes = {
   HOME: '/',
-  USERS: (username?: string) => (username ? `/users/${username}` : '/users/:username'),
+  USERS: (nick?: string) => (nick ? `/users/${nick}` : '/users/:nick'),
   TAGS: (tag?: string) => (tag ? `/tags/${tag}` : '/tags/:tag'),
 };
 
