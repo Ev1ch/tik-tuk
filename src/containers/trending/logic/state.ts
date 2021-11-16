@@ -1,6 +1,6 @@
 import { ITikTuk } from 'types';
 
-export interface ITikTuksState {
+export interface ITrendingState {
   items: ITikTuk[];
   options: {
     limit: number;
@@ -9,7 +9,7 @@ export interface ITikTuksState {
   };
 }
 
-export const initialState: ITikTuksState = {
+export const initialState: ITrendingState = {
   items: [],
   options: {
     limit: 30,

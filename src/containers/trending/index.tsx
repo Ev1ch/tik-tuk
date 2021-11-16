@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import { ITikTuk } from 'types';
-import { TikTuksPage } from 'components';
+import { TrendingPage } from 'components';
 import { useAppDispatch } from 'store';
 import { useTikTuksSelector } from './logic';
 import * as actions from './logic/actions';
 
-const TikTuksContainer = () => {
+const TrendingContainer = () => {
   const tiktuks = useTikTuksSelector((state) => state.items);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(actions.getTikTuks());
+    dispatch(actions.getTrending());
   }, []);
 
-  return <TikTuksPage tiktuks={tiktuks} />;
+  return <TrendingPage tiktuks={tiktuks} />;
 };
 
-export default TikTuksContainer;
+export default TrendingContainer;

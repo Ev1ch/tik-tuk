@@ -4,22 +4,22 @@ import * as actions from './actions';
 import { TikTuksService } from 'services';
 import { ITikTuk } from 'types';
 
-function* getTikTuksWorker() {
+function* getTrandingWorker() {
   try {
-    const limit: number = yield select((state) => state.tiktuks.options.limit);
+    const limit: number = yield select((state) => state.trending.options.limit);
     const tiktuks: ITikTuk[] = yield call(TikTuksService.getMany, { limit });
-    yield put(actions.setTikTuks({ tiktuks }));
+    yield put(actions.setTrending({ tiktuks }));
   } catch (error) {
     console.log(error);
   }
 }
 
-function* getTikTuksWatcher() {
-  yield takeEvery(actionsTypes.GET_TIKTUKS, getTikTuksWorker);
+function* getTrandingWatcher() {
+  yield takeEvery(actionsTypes.GET_TRENDING, getTrandingWorker);
 }
 
-function* tiktuksSaga() {
-  yield all([getTikTuksWatcher()]);
+function* trendingSaga() {
+  yield all([getTrandingWatcher()]);
 }
 
-export default tiktuksSaga;
+export default trendingSaga;
