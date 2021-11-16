@@ -1,8 +1,8 @@
-import { ITikTuksState } from 'containers/tiktuks/logic/state';
+import { ITrendingState } from 'containers/trending/logic/state';
 import { IUserState } from 'containers/user/logic/state';
 
 interface IRootState {
-  tiktuks: ITikTuksState;
+  trending: ITrendingState;
   user: IUserState;
 }
 

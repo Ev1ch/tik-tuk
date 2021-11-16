@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import tiktuksReducer from 'containers/tiktuks/logic';
+import trendingReducer from 'containers/trending/logic';
 import userReducer from 'containers/user/logic';
 
 const reducer = combineReducers({
-  tiktuks: tiktuksReducer,
+  trending: trendingReducer,
   user: userReducer,
 });
 
