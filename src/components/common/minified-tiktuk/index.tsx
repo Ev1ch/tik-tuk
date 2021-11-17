@@ -1,16 +1,16 @@
 import React from 'react';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ITikTuk } from 'types';
+import { IFeedTikTuk } from 'types/feed';
 import { convertToMinifiedNumber } from 'helpers';
 import styles from './minified-tiktuk.module.scss';
 
 interface IMinifiedTikTuk {
-  tiktuk: ITikTuk;
+  tiktuk: IFeedTikTuk;
 }
 
 const MinifiedTikTuk = ({ tiktuk }: IMinifiedTikTuk) => {
-  const viewsCaption = convertToMinifiedNumber(tiktuk.playCount);
+  const viewsCaption = convertToMinifiedNumber(tiktuk.stats.playCount);
 
   return (
     <div className={styles.minifiedTikTuk}>
@@ -19,7 +19,7 @@ const MinifiedTikTuk = ({ tiktuk }: IMinifiedTikTuk) => {
         {viewsCaption}
       </p>
       <div className={styles.overlay}></div>
-      <video src={tiktuk.videoUrl} className={styles.video}></video>
+      <video src={tiktuk.video.playAddr} className={styles.video}></video>
     </div>
   );
 };

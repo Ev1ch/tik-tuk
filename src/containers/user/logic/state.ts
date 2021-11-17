@@ -1,11 +1,12 @@
-import { ITikTuk, IUser } from 'types';
+import { IFeedTikTuk } from 'types/feed';
+import { IUser } from 'types/user';
 
 export interface IUserState {
   user: {
     item: IUser | null;
   };
   feed: {
-    items: ITikTuk[];
+    items: IFeedTikTuk[];
     options: {
       limit: number;
       pageSize: number;

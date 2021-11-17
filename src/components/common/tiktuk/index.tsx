@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITikTuk } from 'types';
+import { ITikTuk } from 'types/tiktuk';
 import Information from './information';
 import Video from './video';
 import Panel from './panel';

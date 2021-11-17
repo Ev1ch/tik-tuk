@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 import { Avatar, Hashtag } from 'components';
-import { IAuthorMeta, IHashtag, IMusicMeta } from 'types';
+import { IAuthorMeta, IHashtag, IMusicMeta } from 'types/tiktuk';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCompactDisc } from '@fortawesome/free-solid-svg-icons';
 import styles from './information.module.scss';

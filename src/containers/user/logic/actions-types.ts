@@ -1,4 +1,5 @@
-import { ITikTuk, IUser } from 'types';
+import { IFeedTikTuk } from 'types/feed';
+import { IUser } from 'types/user';
 
 export const GET_USER = 'USER:GET_USER';
 export const SET_USER = 'USER:SET_USER';
@@ -18,5 +19,5 @@ export interface ISetUserArgs {
 }
 
 export interface ISetUserFeedArgs {
-  feed: ITikTuk[];
+  feed: IFeedTikTuk[];
 }

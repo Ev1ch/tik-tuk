@@ -1,12 +1,14 @@
 import React from 'react';
-import { ITikTuk, IUser } from 'types';
+import { ITikTuk } from 'types/tiktuk';
+import { IUser } from 'types/user';
+import { IFeed, IFeedTikTuk } from 'types/feed';
 import { Header, MinifiedTikTuk } from 'components';
 import Information from './information';
 import styles from './user.module.scss';
 
 interface IUserProps {
   user: IUser;
-  feed: ITikTuk[];
+  feed: IFeedTikTuk[];
 }
 
 const UserPage = ({ user, feed }: IUserProps) => {

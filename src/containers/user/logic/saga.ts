@@ -2,7 +2,8 @@ import { all, takeEvery, call, put, select } from 'redux-saga/effects';
 import * as actionsTypes from './actions-types';
 import * as actions from './actions';
 import { UserService } from 'services';
-import { ITikTuk, IUser } from 'types';
+import { IUser } from 'types/user';
+import { IFeed } from 'types/feed';
 
 function* getUserWorker({ payload: { nick } }: ReturnType<typeof actions.getUser>) {
   try {
@@ -20,7 +21,7 @@ function* getUserWatcher() {
 function* getUserFeedWorker({ payload: { nick } }: ReturnType<typeof actions.getUserFeed>) {
   try {
     const limit: number = yield select((state) => state.user.feed.options.limit);
-    const feed: ITikTuk[] = yield call(UserService.getUserFeed, { nick, limit });
+    const { itemList: feed }: IFeed = yield call(UserService.getUserFeed, { nick, limit });
     yield put(actions.setUserFeed({ feed }));
   } catch (error) {
     console.log(error);

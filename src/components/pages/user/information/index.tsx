@@ -1,5 +1,5 @@
 import React from 'react';
-import { IUserInformation, IUserStats } from 'types';
+import { IUserInformation, IUserStats } from 'types/user';
 import { Avatar } from 'components';
 import styles from './information.module.scss';
 import { convertToMinifiedNumber } from 'helpers';

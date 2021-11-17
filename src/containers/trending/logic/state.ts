@@ -1,4 +1,4 @@
-import { ITikTuk } from 'types';
+import { ITikTuk } from 'types/tiktuk';
 
 export interface ITrendingState {
   items: ITikTuk[];

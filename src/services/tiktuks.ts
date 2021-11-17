@@ -1,4 +1,4 @@
-import { ITikTuk } from 'types';
+import { ITikTuk } from 'types/tiktuk';
 import { callApi } from 'helpers';
 import { ApiRoutes } from 'common';
 

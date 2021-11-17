@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ITikTuk } from 'types';
+import { ITikTuk } from 'types/tiktuk';
 import { TrendingPage } from 'components';
 import { useAppDispatch } from 'store';
 import { useTikTuksSelector } from './logic';

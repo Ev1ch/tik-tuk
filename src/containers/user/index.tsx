@@ -4,13 +4,14 @@ import { UserPage } from 'components';
 import { useUserSelector } from './logic';
 import { useAppDispatch } from 'store';
 import * as actions from './logic/actions';
-import { ITikTuk, IUser } from 'types';
+import { IUser } from 'types/user';
+import { IFeedTikTuk } from 'types/feed';
 
 const UserContainer = () => {
   const dispatch = useAppDispatch();
   const { nick } = useParams<{ nick: string }>();
   const user: IUser | null = useUserSelector((state) => state.user.item);
-  const feed: ITikTuk[] = useUserSelector((state) => state.feed.items);
+  const feed: IFeedTikTuk[] = useUserSelector((state) => state.feed.items);
 
   useEffect(() => {
     dispatch(actions.getUser({ nick }));
