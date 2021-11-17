@@ -38,10 +38,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "stylelint": "stylelint ***/**/*.{scss,sass} --ignore-path .gitignore",
-    "stylelint:fix": "stylelint --fix ***/**/*.scss --ignore-path .gitignore",
-    "jslint": "eslint . --ext ts,tsx --ignore-path .gitignore",
-    "jslint:fix": "eslint --fix . --ext ts,tsx --ignore-path .gitignore",
+    "styleslint": "stylelint ***/**/*.{scss,sass} --ignore-path .gitignore",
+    "styleslint:fix": "stylelint --fix ***/**/*.scss --ignore-path .gitignore",
+    "scriptslint": "eslint . --ext ts,tsx --ignore-path .gitignore",
+    "scriptslint:fix": "eslint --fix . --ext ts,tsx --ignore-path .gitignore",
     "format": "prettier --check . --ignore-path .gitignore",
     "format:fix": "prettier --write . --ignore-path .gitignore"
   },
@@ -58,7 +58,7 @@
     "stylelint-scss": "^3.21.0"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "npm run jslint",
-    "*.{scss,sass}": "npm run stylelint"
+    "*.{ts,tsx}": "npm run scriptslint",
+    "*.{scss,sass}": "npm run styleslint"
   }
 }
