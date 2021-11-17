@@ -22,7 +22,7 @@ const convertToMinifiedNumber = (number: number) => {
     THOUSANDS: {
       MAXIMUM: 1000000,
       DIVIDER: 1000,
-      POSTFIX: 'T',
+      POSTFIX: 'K',
     },
     MILLIONS: {
       MAXIMUM: 1000000000,
