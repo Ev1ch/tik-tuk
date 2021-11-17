@@ -7,6 +7,8 @@ import { IFeed } from 'types/feed';
 
 function* getUserWorker({ payload: { nick } }: ReturnType<typeof actions.getUser>) {
   try {
+    yield put(actions.setLoading({ isLoading: true }));
+
     const feedLimit: number = yield select((state) => state.user.feed.options.limit);
     const { itemList: tiktuks }: IFeed = yield call(UserService.getUserFeed, {
       nick,
@@ -17,6 +19,8 @@ function* getUserWorker({ payload: { nick } }: ReturnType<typeof actions.getUser
     yield put(actions.setUser({ information: { item: information }, feed: { items: tiktuks } }));
   } catch (error) {
     console.log(error);
+  } finally {
+    yield put(actions.setLoading({ isLoading: false }));
   }
 }
 
