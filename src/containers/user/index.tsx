@@ -1,24 +1,28 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
-import { UserPage } from 'components';
+import { Loader, UserPage } from 'components';
 import { useUserSelector } from './logic';
 import { useAppDispatch } from 'store';
 import * as actions from './logic/actions';
-import { IUser } from 'types/user';
-import { IFeedTikTuk } from 'types/feed';
 
 const UserContainer = () => {
   const dispatch = useAppDispatch();
   const { nick } = useParams<{ nick: string }>();
-  const user: IUser | null = useUserSelector((state) => state.user.item);
-  const feed: IFeedTikTuk[] = useUserSelector((state) => state.feed.items);
+  const {
+    information: { item: information },
+    isLoading,
+    feed: { items: feed },
+  } = useUserSelector((state) => state);
 
   useEffect(() => {
     dispatch(actions.getUser({ nick }));
-    dispatch(actions.getUserFeed({ nick }));
   }, []);
 
-  return user ? <UserPage user={user} feed={feed} /> : <h1>Loading</h1>;
+  return !isLoading && information && feed ? (
+    <UserPage information={information} feed={feed} />
+  ) : (
+    <Loader />
+  );
 };
 
 export default UserContainer;

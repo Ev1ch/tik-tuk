@@ -1,26 +1,32 @@
 import { IFeedTikTuk } from 'types/feed';
 import { IUser } from 'types/user';
 
-export interface IUserState {
-  user: {
-    item: IUser | null;
-  };
-  feed: {
-    items: IFeedTikTuk[];
-    options: {
-      limit: number;
-      pageSize: number;
-      pageNumber: number;
-    };
+export interface IUserInformationState {
+  item: IUser | null;
+}
+
+export interface IUserFeedState {
+  items: IFeedTikTuk[] | null;
+  options: {
+    limit: number;
+    pageSize: number;
+    pageNumber: number;
   };
 }
 
+export interface IUserState {
+  isLoading: boolean;
+  information: IUserInformationState;
+  feed: IUserFeedState;
+}
+
 export const initialState: IUserState = {
-  user: {
+  isLoading: false,
+  information: {
     item: null,
   },
   feed: {
-    items: [],
+    items: null,
     options: {
       limit: 30,
       pageSize: 4,

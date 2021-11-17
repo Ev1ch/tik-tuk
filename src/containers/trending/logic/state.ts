@@ -1,7 +1,8 @@
 import { ITikTuk } from 'types/tiktuk';
 
 export interface ITrendingState {
-  items: ITikTuk[];
+  items: ITikTuk[] | null;
+  isLoading: boolean;
   options: {
     limit: number;
     pageSize: number;
@@ -10,7 +11,8 @@ export interface ITrendingState {
 }
 
 export const initialState: ITrendingState = {
-  items: [],
+  items: null,
+  isLoading: false,
   options: {
     limit: 30,
     pageSize: 4,

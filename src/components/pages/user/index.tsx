@@ -7,17 +7,21 @@ import Information from './information';
 import styles from './user.module.scss';
 
 interface IUserProps {
-  user: IUser;
+  information: IUser;
   feed: IFeedTikTuk[];
 }
 
-const UserPage = ({ user, feed }: IUserProps) => {
+const UserPage = ({ information, feed }: IUserProps) => {
   return (
     <div className="user-page">
       <Header />
       <main className={styles.main}>
         <div className="container">
-          <Information user={user.user} stats={user.stats} className={styles.information} />
+          <Information
+            user={information.user}
+            stats={information.stats}
+            className={styles.information}
+          />
           <div className={styles.feed}>
             {feed.map((tiktuk) => (
               <MinifiedTikTuk tiktuk={tiktuk} key={tiktuk.id} />

@@ -15,6 +15,15 @@ const reducer = createReducer<ITrendingState>(initialState, {
       items: tiktuks,
     };
   },
+  [actionsTypes.SET_LOADING]: (
+    state,
+    { payload: { isLoading } }: ReturnType<typeof actions.setLoading>,
+  ) => {
+    return {
+      ...state,
+      isLoading,
+    };
+  },
 });
 
 export const useTikTuksSelector = (selector: TSelector<ITrendingState>) =>

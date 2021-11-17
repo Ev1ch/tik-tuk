@@ -6,25 +6,29 @@ import * as actionsTypes from './actions-types';
 import * as actions from './actions';
 
 const reducer = createReducer<IUserState>(initialState, {
-  [actionsTypes.SET_USER]: (state, { payload: { user } }: ReturnType<typeof actions.setUser>) => {
-    return {
-      ...state,
-      user: {
-        ...state.user,
-        item: user,
-      },
-    };
-  },
-  [actionsTypes.SET_USER_FEED]: (
+  [actionsTypes.SET_USER]: (
     state,
-    { payload: { feed } }: ReturnType<typeof actions.setUserFeed>,
+    { payload: { information, feed } }: ReturnType<typeof actions.setUser>,
   ) => {
     return {
       ...state,
+      information: {
+        ...state.information,
+        ...information,
+      },
       feed: {
         ...state.feed,
-        items: feed,
+        ...feed,
       },
+    };
+  },
+  [actionsTypes.SET_LOADING]: (
+    state,
+    { payload: { isLoading } }: ReturnType<typeof actions.setLoading>,
+  ) => {
+    return {
+      ...state,
+      isLoading,
     };
   },
 });

@@ -6,6 +6,8 @@ import { ITikTuk } from 'types/tiktuk';
 
 function* getTrandingWorker({ payload: { toSet } }: ReturnType<typeof actions.getTrending>) {
   try {
+    yield put(actions.setLoading({ isLoading: true }));
+
     const limit: number = yield select((state) => state.trending.options.limit);
     const tiktuks: ITikTuk[] = yield call(TikTuksService.getMany, { limit });
 
@@ -16,6 +18,8 @@ function* getTrandingWorker({ payload: { toSet } }: ReturnType<typeof actions.ge
     }
   } catch (error) {
     console.log(error);
+  } finally {
+    yield put(actions.setLoading({ isLoading: false }));
   }
 }
 

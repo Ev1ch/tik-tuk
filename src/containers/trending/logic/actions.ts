@@ -5,3 +5,4 @@ export const getTrending = createAction<actionsTypes.IGetTrandingArgs>(actionsTy
 export const setTrending = createAction<actionsTypes.ISetTrendingArgs>(actionsTypes.SET_TRENDING);
 export const addTrending = createAction<actionsTypes.IAddTrendingArgs>(actionsTypes.ADD_TRENDING);
 export const setPage = createAction<actionsTypes.ISetPage>(actionsTypes.SET_PAGE);
+export const setLoading = createAction<actionsTypes.ISetLoading>(actionsTypes.SET_LOADING);
