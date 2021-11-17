@@ -58,6 +58,7 @@
     "stylelint-scss": "^3.21.0"
   },
   "lint-staged": {
+    "*.*": "npm run format",
     "*.{ts,tsx}": "npm run scriptslint",
     "*.{scss,sass}": "npm run styleslint"
   }
