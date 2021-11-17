@@ -34,7 +34,7 @@ const Information = ({ description, author, music }: IInfromationProps) => {
           <p className={styles.name} onClick={onAuthorClick}>
             {author.name}
           </p>
-          {author.signature && <FontAwesomeIcon icon={faCheck} />}
+          {author.signature && <FontAwesomeIcon icon={faCheck} className={styles.icon} />}
         </div>
         <div className={styles.description}>
           <p className={styles.text}>{description.text}</p>

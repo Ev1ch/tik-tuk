@@ -28,6 +28,14 @@
     .name {
       font: 300 14px var(--base-font-family);
     }
+
+    .icon {
+      transition: var(--base-time);
+
+      &:hover {
+        font-size: 18px;
+      }
+    }
   }
 
   .description {
