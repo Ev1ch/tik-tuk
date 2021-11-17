@@ -5,10 +5,20 @@
   display: inline-block;
   font: 400 14px var(--base-font-family);
   user-select: none;
+  cursor: pointer;
 
   &::before {
     content: '#';
     font: 700 16px var(--accent-font-family);
     margin-right: 2px;
+  }
+
+  &:hover {
+    color: var(--contrast-light-color);
+    background-color: var(--dark-color);
+
+    &::before {
+      color: var(--contrast-light-color);
+    }
   }
 }
