@@ -1,3 +1,5 @@
+@import 'styles/variables';
+
 .information {
   display: flex;
   align-items: flex-start;
@@ -78,6 +80,14 @@
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .information {
+    .author {
+      flex-wrap: wrap;
     }
   }
 }

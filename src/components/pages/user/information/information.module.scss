@@ -1,3 +1,5 @@
+@import 'styles/variables';
+
 .information {
   .user {
     display: flex;
@@ -36,6 +38,15 @@
       margin-top: 0;
       margin-bottom: 0;
       font: var(--base-font);
+    }
+  }
+}
+
+@media screen and(max-width: $breakpoint-sm) {
+  .information {
+    .user {
+      text-align: center;
+      flex-wrap: wrap;
     }
   }
 }
