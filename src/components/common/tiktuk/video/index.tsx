@@ -8,7 +8,7 @@ interface IVideoProps {
 const Video = ({ video }: IVideoProps) => {
   return (
     <div className={styles.video}>
-      <video src={video} className={styles.content}></video>
+      <video src={video} className={styles.content} controls></video>
     </div>
   );
 };
