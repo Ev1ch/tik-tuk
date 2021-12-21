@@ -48,6 +48,7 @@ The list of tools, which are used:
   - `Prettier` - automatic formatting tool.
   - `Stylelint` - static analisis of styles.
   - `Eslint` - static analisis of scripts.
+  - `Commitlint` - analisis of commit messages.
 - Deploy - `Vercel`.
 
 ### Additional information
