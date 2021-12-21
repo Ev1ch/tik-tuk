@@ -21,10 +21,6 @@ interface IRequestInit {
   body?: FormData | string;
 }
 
-const callApi = async (args: IRequestArgs): Promise<Response> => {
-  return fetch(getUrl(args), getArgs(args));
-};
-
 const getQuery = (query: IQuery) =>
   Object.keys(query).reduce(
     (string, key, index) => `${string}${index === 0 ? '?' : '&'}${key}=${query[key]}`,
@@ -59,5 +55,7 @@ const getArgs = (args: IRequestArgs): RequestInit => {
     ...(args.method === 'POST' && body ? { body } : {}),
   } as IRequestInit;
 };
+
+const callApi = async (args: IRequestArgs): Promise<Response> => fetch(getUrl(args), getArgs(args));
 
 export default callApi;

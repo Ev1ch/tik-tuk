@@ -9,28 +9,24 @@ const reducer = createReducer<IUserState>(initialState, {
   [actionsTypes.SET_USER]: (
     state,
     { payload: { information, feed } }: ReturnType<typeof actions.setUser>,
-  ) => {
-    return {
-      ...state,
-      information: {
-        ...state.information,
-        ...information,
-      },
-      feed: {
-        ...state.feed,
-        ...feed,
-      },
-    };
-  },
+  ) => ({
+    ...state,
+    information: {
+      ...state.information,
+      ...information,
+    },
+    feed: {
+      ...state.feed,
+      ...feed,
+    },
+  }),
   [actionsTypes.SET_LOADING]: (
     state,
     { payload: { isLoading } }: ReturnType<typeof actions.setLoading>,
-  ) => {
-    return {
-      ...state,
-      isLoading,
-    };
-  },
+  ) => ({
+    ...state,
+    isLoading,
+  }),
 });
 
 export const useUserSelector = (selector: TSelector<IUserState>) =>

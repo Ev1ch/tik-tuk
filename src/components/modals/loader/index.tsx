@@ -2,7 +2,7 @@ import React from 'react';
 import { Spinner } from 'components';
 import styles from './loader.module.scss';
 
-const Loader = () => {
+const Loader = function Loader() {
   return (
     <div className={styles.loader}>
       <div className={styles.container}>

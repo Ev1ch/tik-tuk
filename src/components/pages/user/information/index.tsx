@@ -1,9 +1,9 @@
 import React from 'react';
 import { IUserInformation, IUserStats } from 'types/user';
 import { Avatar } from 'components';
-import styles from './information.module.scss';
 import { convertToMinifiedNumber } from 'helpers';
 import clsx from 'clsx';
+import styles from './information.module.scss';
 
 interface IInformationProps {
   user: IUserInformation;
@@ -11,7 +11,7 @@ interface IInformationProps {
   className?: string;
 }
 
-const Information = ({ user, stats, className }: IInformationProps) => {
+const Information = function Information({ user, stats, className }: IInformationProps) {
   const followingCaption = convertToMinifiedNumber(stats.followingCount);
   const followersCaption = convertToMinifiedNumber(stats.followerCount);
   const likesCaption = convertToMinifiedNumber(stats.diggCount);
@@ -27,13 +27,16 @@ const Information = ({ user, stats, className }: IInformationProps) => {
       </div>
       <div className={styles.stats}>
         <p>
-          <strong>{followingCaption}</strong> following
+          <strong>{followingCaption}</strong>
+          following
         </p>
         <p>
-          <strong>{followersCaption}</strong> followers
+          <strong>{followersCaption}</strong>
+          followers
         </p>
         <p>
-          <strong>{likesCaption}</strong> likes
+          <strong>{likesCaption}</strong>
+          likes
         </p>
       </div>
     </div>

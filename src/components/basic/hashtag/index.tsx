@@ -8,7 +8,7 @@ interface IHashtagProps {
   className?: string;
 }
 
-const Hashtag = ({ hashtag, className }: IHashtagProps) => {
+const Hashtag = function Hashtag({ hashtag, className }: IHashtagProps) {
   return (
     <div className={clsx(styles.hashtag, className)}>
       <span>{hashtag.name}</span>

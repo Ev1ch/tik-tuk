@@ -1,9 +1,9 @@
 import { all, takeEvery, call, put, select } from 'redux-saga/effects';
-import * as actionsTypes from './actions-types';
-import * as actions from './actions';
 import { UserService } from 'services';
 import { IUser } from 'types/user';
 import { IFeed } from 'types/feed';
+import * as actions from './actions';
+import * as actionsTypes from './actions-types';
 
 function* getUserWorker({ payload: { nick } }: ReturnType<typeof actions.getUser>) {
   try {
@@ -17,8 +17,6 @@ function* getUserWorker({ payload: { nick } }: ReturnType<typeof actions.getUser
     const information: IUser = yield call(UserService.getUser, { nick });
 
     yield put(actions.setUser({ information: { item: information }, feed: { items: tiktuks } }));
-  } catch (error) {
-    console.log(error);
   } finally {
     yield put(actions.setLoading({ isLoading: false }));
   }

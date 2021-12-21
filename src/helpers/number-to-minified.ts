@@ -36,8 +36,7 @@ const convertToMinifiedNumber = (number: number) => {
     },
   };
 
-  for (const stage in Stages) {
-    const currentStage = Stages[stage];
+  Object.values(Stages).forEach((currentStage): string => {
     const dividedNumber = number / currentStage.DIVIDER;
 
     if (number < currentStage.MAXIMUM) {
@@ -46,7 +45,9 @@ const convertToMinifiedNumber = (number: number) => {
       }`;
       return convertedNumber;
     }
-  }
+
+    return String(number);
+  });
 
   return convertedNumber;
 };

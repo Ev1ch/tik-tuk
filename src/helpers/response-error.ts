@@ -1,5 +1,6 @@
 class ResponseError {
   private message: string;
+
   private status: number;
 
   constructor(message: string, status = 200) {

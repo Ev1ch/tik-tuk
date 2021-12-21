@@ -6,11 +6,11 @@ interface ISpinnerProps {
   className?: string;
 }
 
-const Spinner = ({ className }: ISpinnerProps) => {
+const Spinner = function Spinner({ className }: ISpinnerProps) {
   return (
     <div className={clsx(styles.spinner, className)}>
-      <div></div>
-      <div></div>
+      <div />
+      <div />
     </div>
   );
 };

@@ -9,21 +9,17 @@ const reducer = createReducer<ITrendingState>(initialState, {
   [actionsTypes.SET_TRENDING]: (
     state,
     { payload: { tiktuks } }: ReturnType<typeof actions.setTrending>,
-  ) => {
-    return {
-      ...state,
-      items: tiktuks,
-    };
-  },
+  ) => ({
+    ...state,
+    items: tiktuks,
+  }),
   [actionsTypes.SET_LOADING]: (
     state,
     { payload: { isLoading } }: ReturnType<typeof actions.setLoading>,
-  ) => {
-    return {
-      ...state,
-      isLoading,
-    };
-  },
+  ) => ({
+    ...state,
+    isLoading,
+  }),
 });
 
 export const useTikTuksSelector = (selector: TSelector<ITrendingState>) =>

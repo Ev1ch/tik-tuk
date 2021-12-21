@@ -9,7 +9,7 @@ interface IAvatarProps {
   onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
-const Avatar = ({ image, alt, className, onClick }: IAvatarProps) => {
+const Avatar = function Avatar({ image, alt, className, onClick }: IAvatarProps) {
   const onClickHandler = (event: MouseEvent<HTMLElement>) => {
     if (onClick) {
       onClick(event);
@@ -17,7 +17,7 @@ const Avatar = ({ image, alt, className, onClick }: IAvatarProps) => {
   };
 
   return (
-    <div className={clsx(styles.avatar, className)} onClick={onClickHandler}>
+    <div className={clsx(styles.avatar, className)} onClick={onClickHandler} role="img">
       <img src={image} alt={alt} className={styles.image} />
     </div>
   );

@@ -5,10 +5,12 @@ interface IVideoProps {
   video: string;
 }
 
-const Video = ({ video }: IVideoProps) => {
+const Video = function Video({ video }: IVideoProps) {
   return (
     <div className={styles.video}>
-      <video src={video} className={styles.content} controls></video>
+      <video src={video} className={styles.content} controls>
+        <track kind="captions" />
+      </video>
     </div>
   );
 };

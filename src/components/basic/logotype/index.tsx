@@ -6,7 +6,7 @@ interface ILogotypeProps {
   className?: string;
 }
 
-const Logotype = ({ className }: ILogotypeProps) => {
+const Logotype = function Logotype({ className }: ILogotypeProps) {
   return <p className={clsx(styles.logotype, className)}>Tik Tuk</p>;
 };
 

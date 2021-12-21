@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { TrendingContainer, UserContainer } from 'containers';
 import { Routes } from 'common';
 
-const Router = (): JSX.Element => {
+const Router = function Router(): JSX.Element {
   return (
     <BrowserRouter>
       <Switch>

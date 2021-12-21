@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Loader, UserPage } from 'components';
-import { useUserSelector } from './logic';
 import { useAppDispatch } from 'store';
+import { useUserSelector } from './logic';
 import * as actions from './logic/actions';
 
-const UserContainer = () => {
+const UserContainer = function UserContainer() {
   const dispatch = useAppDispatch();
   const { nick } = useParams<{ nick: string }>();
   const {

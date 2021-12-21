@@ -9,7 +9,7 @@ interface IMinifiedTikTuk {
   tiktuk: IFeedTikTuk;
 }
 
-const MinifiedTikTuk = ({ tiktuk }: IMinifiedTikTuk) => {
+const MinifiedTikTuk = function MinifiedTikTuk({ tiktuk }: IMinifiedTikTuk) {
   const viewsCaption = convertToMinifiedNumber(tiktuk.stats.playCount);
 
   return (
@@ -18,8 +18,10 @@ const MinifiedTikTuk = ({ tiktuk }: IMinifiedTikTuk) => {
         <FontAwesomeIcon icon={faPlay} className={styles.icon} />
         {viewsCaption}
       </p>
-      <div className={styles.overlay}></div>
-      <video src={tiktuk.video.playAddr} className={styles.video}></video>
+      <div className={styles.overlay} />
+      <video src={tiktuk.video.playAddr} className={styles.video}>
+        <track kind="captions" />
+      </video>
     </div>
   );
 };

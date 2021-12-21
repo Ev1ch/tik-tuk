@@ -1,5 +1,6 @@
 import React from 'react';
 import { ITikTuk } from 'types/tiktuk';
+import clsx from 'clsx';
 import Information from './information';
 import Video from './video';
 import Panel from './panel';
@@ -10,9 +11,9 @@ interface IVideoProps {
   className?: string;
 }
 
-const TikTuk = ({ tiktuk }: IVideoProps) => {
+const TikTuk = function TikTuk({ tiktuk, className }: IVideoProps) {
   return (
-    <div className={styles.tiktuk}>
+    <div className={clsx(styles.tiktuk, className)}>
       <div className={styles.information}>
         <Information
           author={tiktuk.authorMeta}

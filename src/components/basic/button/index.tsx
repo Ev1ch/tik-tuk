@@ -11,7 +11,7 @@ interface IButtonProps {
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const Button = ({ icon, text, className, onClick }: IButtonProps) => {
+const Button = function Button({ icon, text, className, onClick }: IButtonProps) {
   const onClickHandler = (event: MouseEvent<HTMLButtonElement>) => {
     if (onClick) {
       onClick(event);
@@ -19,7 +19,7 @@ const Button = ({ icon, text, className, onClick }: IButtonProps) => {
   };
 
   return (
-    <button className={clsx(styles.button, className)} onClick={onClickHandler}>
+    <button className={clsx(styles.button, className)} onClick={onClickHandler} type="button">
       {icon && <FontAwesomeIcon icon={icon} />}
       {text}
     </button>

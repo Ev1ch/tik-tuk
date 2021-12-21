@@ -10,22 +10,22 @@ interface IPanelProps {
   shares: number;
 }
 
-const Panel = ({ likes, comments, shares }: IPanelProps) => {
+const Panel = function Panel({ likes, comments, shares }: IPanelProps) {
   const likesCaption = convertToMinifiedNumber(likes);
   const commentsCaption = convertToMinifiedNumber(comments);
   const sharesCaption = convertToMinifiedNumber(shares);
 
   return (
     <div className={styles.panel}>
-      <button className={styles.button}>
+      <button className={styles.button} type="button">
         <FontAwesomeIcon icon={faHeart} className={styles.icon} />
         {likesCaption}
       </button>
-      <button className={styles.button}>
+      <button className={styles.button} type="button">
         <FontAwesomeIcon icon={faComment} className={styles.icon} />
         {commentsCaption}
       </button>
-      <button className={styles.button}>
+      <button className={styles.button} type="button">
         <FontAwesomeIcon icon={faShare} className={styles.icon} />
         {sharesCaption}
       </button>

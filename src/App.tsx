@@ -1,10 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './store';
 import { Router } from 'containers';
+import store from './store';
 import 'styles/index.scss';
 
-const App = (): JSX.Element => {
+const App = function App(): JSX.Element {
   return (
     <Provider store={store}>
       <Router />

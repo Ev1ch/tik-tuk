@@ -7,7 +7,7 @@ interface ITrendingPageProps {
   tiktuks: ITikTuk[];
 }
 
-const TrendingPage = ({ tiktuks }: ITrendingPageProps) => {
+const TrendingPage = function TrendingPage({ tiktuks }: ITrendingPageProps) {
   return (
     <div className="trending-page">
       <Header />
