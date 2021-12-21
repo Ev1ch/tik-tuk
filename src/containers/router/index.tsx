@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Routes as Switch, Route, Navigate } from 'react-router-dom';
 import { TrendingContainer, UserContainer } from 'containers';
 import { Routes } from 'common';
 
@@ -7,12 +7,9 @@ const Router = function Router(): JSX.Element {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path={Routes.TRENDING} exact>
-          <TrendingContainer />
-        </Route>
-        <Route path={Routes.USERS()} exact>
-          <UserContainer />
-        </Route>
+        <Route path={Routes.TRENDING} element={<TrendingContainer />} />
+        <Route path={Routes.USERS()} element={<UserContainer />} />
+        <Route path={Routes.ALL} element={<Navigate to={Routes.TRENDING} />} />
       </Switch>
     </BrowserRouter>
   );

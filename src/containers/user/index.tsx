@@ -15,7 +15,9 @@ const UserContainer = function UserContainer() {
   } = useUserSelector((state) => state);
 
   useEffect(() => {
-    dispatch(actions.getUser({ nick }));
+    if (nick) {
+      dispatch(actions.getUser({ nick }));
+    }
   }, []);
 
   return !isLoading && information && feed ? (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Avatar, Hashtag } from 'components';
 import { IAuthorMeta, IHashtag, IMusicMeta } from 'types/tiktuk';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,10 +17,10 @@ interface IInfromationProps {
 }
 
 const Information = function Information({ description, author, music }: IInfromationProps) {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const onAuthorClick = () => {
-    history.push(Routes.USERS(author.name));
+    navigate(Routes.USERS(author.name));
   };
 
   return (

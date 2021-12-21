@@ -1,15 +1,15 @@
 import React from 'react';
 import clsx from 'clsx';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Logotype } from 'components';
 import { Routes } from 'common';
 import styles from './header.module.scss';
 
 const Header = function Header() {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const onLogoClick = () => {
-    history.push(Routes.TRENDING);
+    navigate(Routes.TRENDING);
   };
 
   return (
